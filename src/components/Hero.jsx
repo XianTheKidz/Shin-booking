@@ -11,10 +11,8 @@ const Hero = () => {
         loop
         muted
         playsInline
-        preload="auto"
-        className="absolute inset-0 z-0 h-full w-full object-cover"
-      >
-      </video>
+        className="absolute inset-0 h-full w-full object-cover"
+      />
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
