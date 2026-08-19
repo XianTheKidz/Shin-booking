@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #2563EB;
+  --color-secondary: #FBBF24;
+}
+
+*{
+  font-family: Outfit;
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+.font-family-playfair{
+  font-family: Playfair !important;
+}
+
+.animated-gradient-text {
+  display: inline-block;
+
+  background: linear-gradient(
+    120deg,
+    #166F9B,
+    #33A6B4,
+    #D9D5C8,
+    #33A6B4,
+    #166F9B
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+
+  to {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 250% 50%;
+  }
+}
+
+.newsletter-border {
+  position: relative;
+  padding: 2px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.newsletter-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    #166F9B,
+    #33A6B4,
+    #D9D5C8,
+    #33A6B4,
+    #166F9B
+  );
+
+  background-size: 300% 300%;
+  animation: shimmer 8s linear infinite;
+}
+
+.newsletter-content {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.star-yellow {
+  filter: brightness(0) saturate(100%)
+    invert(63%) sepia(48%) saturate(650%)
+    hue-rotate(5deg) brightness(92%);
+}
+
+.star-cyan {
+  filter: brightness(0) saturate(100%)
+    invert(72%) sepia(70%) saturate(900%)
+    hue-rotate(145deg) brightness(105%);
+}
+
+.star-empty {
+  filter: brightness(0) saturate(100%)
+    invert(63%) sepia(48%) saturate(650%)
+    hue-rotate(5deg) brightness(92%);
+  opacity: 0.45;
+}
+
+.dark .star-empty {
+  filter: brightness(0) saturate(100%)
+    invert(72%) sepia(70%) saturate(900%)
+    hue-rotate(145deg) brightness(105%);
+  opacity: 0.45;
+}
+
+.room-rating-star {
+  filter: brightness(0) saturate(100%)
+    invert(63%)
+    sepia(48%)
+    saturate(650%)
+    hue-rotate(5deg)
+    brightness(92%);
+}
+
+/* Dark mode */
+.dark .room-rating-star {
+  filter: brightness(0) saturate(100%)
+    invert(72%)
+    sepia(70%)
+    saturate(900%)
+    hue-rotate(145deg)
+    brightness(105%);
+}
