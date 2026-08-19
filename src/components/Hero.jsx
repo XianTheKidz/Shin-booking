@@ -6,13 +6,14 @@ const Hero = () => {
     <section className="relative h-screen overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Video */}
       <video
-        src={hotelVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+  src={assets.hotelVideo}
+  controls
+  muted
+  playsInline
+  className="w-full h-[500px] object-cover"
+>
+  Your browser does not support video.
+</video>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
