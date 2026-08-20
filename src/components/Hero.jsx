@@ -1,4 +1,4 @@
-import hotelVideo from "../assets/hotel.mp4";
+import hotelVideo from "../assets/hotel-web.mp4";
 import { assets, roomTypes } from "../assets/assets";
 
 const Hero = () => {
