@@ -11,10 +11,10 @@ import {
 
 const songs = [
   {
-    title: "JUST A DREAM",
-    artist: "Yel",
-    src: "/music/just-a-dream.mp3",
-    cover: "/covers/just-a-dream.jpg",
+    title: "Sunshine",
+    artist: "OneRepublic",
+    src: "/music/Sunshine.mp3",
+    cover: "/covers/sunshine.jpg",
   },
   {
     title: "Super Far",
@@ -45,6 +45,12 @@ const songs = [
     artist: "One Direction",
     src: "/music/no-control.mp3",
     cover: "/covers/four.jpg",
+  },
+  {
+    title: "JUST A DREAM",
+    artist: "Yel",
+    src: "/music/just-a-dream.mp3",
+    cover: "/covers/just-a-dream.jpg",
   },
   {
     title: "beach song",
@@ -93,12 +99,6 @@ const songs = [
     artist: "Ravyn Lenae",
     src: "/music/love-me-not.mp3",
     cover: "/covers/love-me-not.jpg",
-  },
-  {
-    title: "Every Summertime",
-    artist: "NIKI",
-    src: "/music/every-summertime.mp3",
-    cover: "/covers/every-summertime.jpg",
   },
 ];
 
