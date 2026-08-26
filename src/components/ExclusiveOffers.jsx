@@ -89,77 +89,232 @@ const ExclusiveOffers = () => {
         ))}
       </div>
 
-      {/* ================= Modal ================= */}
+{/* ================= Modal ================= */}
+{selectedPackage && (
+  <div
+    className="
+      fixed inset-0 z-50
+      flex items-center justify-center
+      bg-black/70
+      p-0
+      backdrop-blur-sm
 
-      {selectedPackage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-5">
-          <div className="relative flex w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-900 lg:h-162.5 lg:flex-row">
+      sm:p-5
+    "
+  >
+    <div
+      className="
+        relative
+        flex
+        h-full
+        w-full
+        flex-col
+        overflow-y-auto
+        bg-white
+        shadow-2xl
 
-            {/* Close */}
-            <button
-              onClick={() => setSelectedPackage(null)}
-              className="absolute right-5 top-5 z-20 rounded-full border border-gray-200 bg-white p-2 text-gray-700 shadow transition hover:bg-gray-100 dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
+        dark:bg-slate-900
+
+        sm:h-[90vh]
+        sm:max-h-212.5
+        sm:rounded-3xl
+
+        lg:flex-row
+        lg:overflow-hidden
+      "
+    >
+
+      {/* Close Button */}
+      <button
+        onClick={() => setSelectedPackage(null)}
+        aria-label="Close package"
+        className="
+          fixed
+          right-4
+          top-4
+          z-60
+          flex
+          h-11
+          w-11
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-gray-200
+          bg-white
+          text-gray-700
+          shadow-lg
+          transition
+          hover:bg-gray-100
+
+          dark:border-slate-600
+          dark:bg-slate-800
+          dark:text-white
+          dark:hover:bg-slate-700
+
+          sm:absolute
+          sm:right-5
+          sm:top-5
+        "
+      >
+        <X size={24} strokeWidth={2} />
+      </button>
+
+      {/* Left Content */}
+      <div
+        className="
+          flex
+          w-full
+          shrink-0
+          flex-col
+          p-6
+          pt-20
+
+          sm:p-8
+          sm:pt-8
+
+          lg:w-[42%]
+          lg:overflow-y-auto
+          lg:p-10
+          lg:pt-10
+        "
+      >
+
+        {/* Discount */}
+        <span
+          className="
+            inline-flex
+            w-fit
+            rounded-full
+            bg-gray-100
+            px-4
+            py-1
+            text-sm
+            font-medium
+            text-gray-700
+
+            dark:bg-slate-800
+            dark:text-gray-200
+          "
+        >
+          Save {selectedPackage.priceOff}%
+        </span>
+
+        {/* Title */}
+        <h2
+          className="
+            mt-4
+            font-playfair
+            text-3xl
+            font-semibold
+            text-gray-900
+
+            sm:text-4xl
+
+            dark:text-white
+          "
+        >
+          {selectedPackage.title}
+        </h2>
+
+        {/* Description */}
+        <p
+          className="
+            mt-5
+            text-base
+            leading-7
+            text-gray-600
+
+            sm:text-lg
+            sm:leading-8
+
+            dark:text-gray-300
+          "
+        >
+          {selectedPackage.description}
+        </p>
+
+        {/* Includes */}
+        <h3
+          className="
+            mt-7
+            text-xl
+            font-semibold
+            text-gray-900
+
+            dark:text-white
+          "
+        >
+          Package Includes
+        </h3>
+
+        <div className="mt-5 space-y-5 pb-6">
+          {selectedPackage.includes.map((include) => (
+            <div
+              key={include.title}
+              className="flex items-center gap-4"
             >
-              <X size={22} />
-            </button>
+              <img
+                src={include.icon}
+                alt={include.title}
+                className="
+                  h-7
+                  w-7
+                  shrink-0
 
-            {/* Left */}
-            <div className="flex w-full flex-col p-8 lg:w-[42%] lg:p-10">
+                  dark:invert
+                  dark:brightness-200
+                "
+              />
 
-              <span className="inline-flex w-fit rounded-full bg-gray-100 px-4 py-1 text-sm font-medium text-gray-700 dark:bg-slate-800 dark:text-gray-200">
-                Save {selectedPackage.priceOff}%
-              </span>
+              <span
+                className="
+                  text-base
+                  text-gray-700
 
-              <h2 className="mt-4 font-playfair text-4xl font-semibold text-gray-900 dark:text-white">
-                {selectedPackage.title}
-              </h2>
+                  sm:text-lg
 
-              <p className="mt-5 leading-8 text-gray-600 dark:text-gray-300">
-                {selectedPackage.description}
-              </p>
-
-              <h3 className="mt-8 text-xl font-semibold text-gray-900 dark:text-white">
-                Package Includes
-              </h3>
-
-              <div className="mt-5 space-y-4">
-                {selectedPackage.includes.map((include) => (
-                  <div
-                    key={include.title}
-                    className="flex items-center gap-3"
-                  >
-                    <img
-                      src={include.icon}
-                      alt={include.title}
-                      className="h-6 w-6 dark:invert dark:brightness-200"
-                    />
-
-                    <span className="text-gray-700 dark:text-gray-200">
-                      {include.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right */}
-            <div className="h-75 w-full bg-black lg:h-full lg:w-[58%]">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover"
+                  dark:text-gray-200
+                "
               >
-                <source
-                  src={selectedPackage.video}
-                  type="video/mp4"
-                />
-              </video>
+                {include.title}
+              </span>
             </div>
-          </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Right Video */}
+      <div
+        className="
+          relative
+          h-80
+          w-full
+          shrink-0
+          bg-black
+
+          sm:h-96
+
+          lg:h-full
+          lg:w-[58%]
+        "
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        >
+          <source
+            src={selectedPackage.video}
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 };
