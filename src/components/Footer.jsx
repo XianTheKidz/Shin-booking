@@ -247,11 +247,6 @@ const Footer = () => {
             Vergina Beach Resort • Agia Marina, Chania, Crete
             </span>
           </p>
-
-
-        
-
-
           <div className="flex gap-8 text-sm text-gray-500 dark:text-gray-400">
 
             <a href="#" className="hover:text-cyan-500 transition">
