@@ -8,6 +8,7 @@ import AllRooms from "./pages/AllRooms";
 import RoomDetails from "./pages/RoomDetails";
 import Facilities from "./pages/Facilities";
 import About from "./pages/About";
+import MyBookings from "./pages/MyBookings";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/about" element={<About />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
         </Routes>
       </div>
 
